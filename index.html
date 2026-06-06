@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeetMind AI | Turn Every Conversation Into Actionable Intelligence</title>
+    <meta name="description" content="MeetMind AI is an enterprise-grade, AI-powered meeting assistant that automatically transcribes, summarizes, and extracts action items from your meetings, enabling instant semantic search across all past conversations.">
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Glow Effects in Background -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Header / Navigation -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#" class="logo-group" id="nav-logo">
+                <div class="logo-icon">
+                    <span class="logo-dot"></span>
+                </div>
+                <span class="logo-text">MeetMind <span class="accent-text">AI</span></span>
+            </a>
+            
+            <nav class="main-nav" id="main-nav">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#dashboard-showcase" class="nav-link">Product</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="#login" class="btn btn-text">Sign In</a>
+                <a href="#signup" class="btn btn-primary">Get Started Free</a>
+            </div>
+
+            <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle Navigation Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-overlay">
+        <nav class="mobile-nav">
+            <a href="#features" class="mobile-link">Features</a>
+            <a href="#how-it-works" class="mobile-link">How It Works</a>
+            <a href="#dashboard-showcase" class="mobile-link">Product</a>
+            <a href="#pricing" class="mobile-link">Pricing</a>
+            <a href="#faq" class="mobile-link">FAQ</a>
+            <div class="mobile-actions">
+                <a href="#login" class="btn btn-text w-full">Sign In</a>
+                <a href="#signup" class="btn btn-primary w-full">Get Started Free</a>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="section-container">
+                <div class="hero-badge reveal">
+                    <span class="badge-tag">New</span>
+                    <span class="badge-text">MeetMind 2.0: Instant Enterprise Semantic Search is live</span>
+                    <i data-lucide="arrow-right" class="badge-arrow"></i>
+                </div>
+                
+                <h1 class="hero-title reveal">
+                    Turn Every Conversation Into <br>
+                    <span class="gradient-text">Actionable Intelligence</span>
+                </h1>
+                
+                <p class="hero-subtitle reveal">
+                    MeetMind AI automatically transcribes your meetings, generates concise summaries, extracts key action items, and enables instant semantic search across all past conversations using advanced RAG and LLM technology.
+                </p>
+
+                <div class="hero-ctas reveal">
+                    <a href="#signup" class="btn btn-primary btn-lg">Get Started Free</a>
+                    <a href="#demo" class="btn btn-secondary btn-lg">
+                        <i data-lucide="play" class="btn-icon"></i> Book a Demo
+                    </a>
+                </div>
+
+                <!-- Interactive Dashboard Mockup -->
+                <div class="dashboard-mockup-wrapper reveal">
+                    <div class="dashboard-mockup">
+                        <!-- Window Chrome -->
+                        <div class="chrome-header">
+                            <div class="chrome-dots">
+                                <span class="dot-red"></span>
+                                <span class="dot-yellow"></span>
+                                <span class="dot-green"></span>
+                            </div>
+                            <div class="chrome-address">
+                                <i data-lucide="lock" class="chrome-lock-icon"></i>
+                                <span>app.meetmind.ai/dashboard</span>
+                            </div>
+                            <div class="chrome-actions">
+                                <i data-lucide="plus"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Dashboard Layout -->
+                        <div class="dashboard-body">
+                            <!-- Sidebar -->
+                            <aside class="dash-sidebar">
+                                <div class="sidebar-logo">
+                                    <div class="logo-icon-s"></div>
+                                    <span>MeetMind AI</span>
+                                </div>
+                                <div class="sidebar-menu">
+                                    <button class="side-btn active" data-tab="meetings">
+                                        <i data-lucide="video"></i> <span>Meetings</span>
+                                    </button>
+                                    <button class="side-btn" data-tab="search">
+                                        <i data-lucide="search"></i> <span>Semantic Search</span>
+                                    </button>
+                                    <button class="side-btn" data-tab="ask-ai">
+                                        <i data-lucide="sparkles"></i> <span>Ask AI Assistant</span>
+                                    </button>
+                                    <button class="side-btn" data-tab="settings">
+                                        <i data-lucide="settings"></i> <span>Settings</span>
+                                    </button>
+                                </div>
+                                <div class="sidebar-user">
+                                    <div class="user-avatar">JD</div>
+                                    <div class="user-info">
+                                        <p class="user-name">John Doe</p>
+                                        <p class="user-role">Product Lead</p>
+                                    </div>
+                                </div>
+                            </aside>
+
+                            <!-- Dashboard Content -->
+                            <div class="dash-content">
+                                <!-- Meetings Tab (Default View) -->
+                                <div class="tab-panel active" id="panel-meetings">
+                                    <div class="panel-header">
+                                        <div>
+                                            <span class="status-indicator">Recording Live</span>
+                                            <h3 class="meeting-title">Q3 Product Strategy & Roadmap Sync</h3>
+                                            <p class="meeting-meta">June 6, 2026 • 45 mins • 6 Attendees</p>
+                                        </div>
+                                        <div class="panel-actions">
+                                            <button class="btn-icon-only"><i data-lucide="share-2"></i></button>
+                                            <button class="btn btn-secondary btn-sm"><i data-lucide="download"></i> Export</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="dashboard-grid">
+                                        <!-- Main content: Transcript -->
+                                        <div class="grid-main">
+                                            <div class="card-header-tabs">
+                                                <button class="tab-trigger active" data-subtab="transcript">Live Transcript</button>
+                                                <button class="tab-trigger" data-subtab="summary">AI Summary</button>
+                                            </div>
+                                            
+                                            <!-- Transcript Subtab -->
+                                            <div class="subtab-panel active" id="subpanel-transcript">
+                                                <div class="transcript-list">
+                                                    <div class="transcript-item">
+                                                        <div class="transcript-meta">
+                                                            <span class="speaker-name text-blue">Sarah Jenkins (VP Design)</span>
+                                                            <span class="timestamp">12:04</span>
+                                                        </div>
+                                                        <p class="transcript-text">We need to simplify the onboarding flow. Right now, user drop-off is at 28% during the integration phase. I suggest we introduce a wizard that helps them connect Slack and Zoom automatically.</p>
+                                                    </div>
+                                                    <div class="transcript-item highlight">
+                                                        <div class="transcript-meta">
+                                                            <span class="speaker-name text-purple">Alex Rivera (Eng Lead)</span>
+                                                            <span class="timestamp">12:06</span>
+                                                        </div>
+                                                        <p class="transcript-text">I can kick off the OAuth integrations sprint tomorrow. We should have the prototype ready by Thursday. I'll sync with David to ensure the database schemas are updated.</p>
+                                                    </div>
+                                                    <div class="transcript-item">
+                                                        <div class="transcript-meta">
+                                                            <span class="speaker-name text-green">David K. (Data Architect)</span>
+                                                            <span class="timestamp">12:07</span>
+                                                        </div>
+                                                        <p class="transcript-text">Sounds good. I will optimize the API endpoints so that sync speeds are sub-100ms. We should also verify HIPAA compliance policies for these integrations.</p>
+                                                    </div>
+                                                    <div class="transcript-item live-typing">
+                                                        <div class="transcript-meta">
+                                                            <span class="speaker-name text-orange">Sarah Jenkins (VP Design)</span>
+                                                            <span class="timestamp">Just now</span>
+                                                        </div>
+                                                        <p class="transcript-text cursor-blink">Perfect, let's schedule a review session on Friday morning at 10 AM to finalize the design prototype.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Summary Subtab -->
+                                            <div class="subtab-panel" id="subpanel-summary">
+                                                <div class="summary-content">
+                                                    <h4 class="summary-section-title">Executive Overview</h4>
+                                                    <p class="summary-text">The team discussed strategies to reduce the 28% user drop-off rate during onboarding. The focus will be on automating integration steps for Slack and Zoom, updating API performance, and validating security protocols.</p>
+                                                    
+                                                    <h4 class="summary-section-title">Key Themes</h4>
+                                                    <ul class="summary-list">
+                                                        <li><strong>UX Friction:</strong> Identified onboarding flow as the main bottleneck.</li>
+                                                        <li><strong>Engineering Alignment:</strong> Scheduled sprint setup for OAuth flow and database schema updates.</li>
+                                                        <li><strong>Compliance:</strong> Highlighted the necessity of auditing HIPAA parameters before launch.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Sidebar: Actions & Insights -->
+                                        <div class="grid-side">
+                                            <div class="action-items-card">
+                                                <div class="card-title-bar">
+                                                    <i data-lucide="check-square" class="text-purple"></i>
+                                                    <h4>Extracted Action Items</h4>
+                                                    <span class="badge-count">3</span>
+                                                </div>
+                                                
+                                                <ul class="action-list">
+                                                    <li class="action-item-checkbox">
+                                                        <label class="custom-checkbox">
+                                                            <input type="checkbox" id="act-1">
+                                                            <span class="checkmark"></span>
+                                                            <span class="action-label-text">
+                                                                <strong>Alex Rivera:</strong> Initiate OAuth integration sprint for Zoom & Slack
+                                                            </span>
+                                                        </label>
+                                                        <div class="action-tags">
+                                                            <span class="tag tag-high">High</span>
+                                                            <span class="tag-date">Due Thursday</span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="action-item-checkbox">
+                                                        <label class="custom-checkbox">
+                                                            <input type="checkbox" id="act-2">
+                                                            <span class="checkmark"></span>
+                                                            <span class="action-label-text">
+                                                                <strong>David K.:</strong> Optimize sync API endpoints for sub-100ms response times
+                                                            </span>
+                                                        </label>
+                                                        <div class="action-tags">
+                                                            <span class="tag tag-medium">Medium</span>
+                                                            <span class="tag-date">Due Friday</span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="action-item-checkbox">
+                                                        <label class="custom-checkbox">
+                                                            <input type="checkbox" id="act-3">
+                                                            <span class="checkmark"></span>
+                                                            <span class="action-label-text">
+                                                                <strong>Sarah Jenkins:</strong> Finalize UI mockups for onboarding wizard
+                                                            </span>
+                                                        </label>
+                                                        <div class="action-tags">
+                                                            <span class="tag tag-medium">Medium</span>
+                                                            <span class="tag-date">Due Friday</span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Semantic Search Tab -->
+                                <div class="tab-panel" id="panel-search">
+                                    <div class="search-tab-container">
+                                        <div class="search-bar-wrapper">
+                                            <i data-lucide="search" class="search-icon"></i>
+                                            <input type="text" class="search-input" id="semantic-search-input" placeholder="Search across all past meetings... e.g. 'what did we decide on HIPAA compliance?'">
+                                            <button class="btn btn-primary btn-sm" id="search-btn">RAG Search</button>
+                                        </div>
+                                        
+                                        <div class="search-results-section">
+                                            <p class="search-results-meta">Type a query or press enter to search with semantic RAG retrieval.</p>
+                                            
+                                            <div class="search-results-list" id="search-results-list">
+                                                <!-- Mock search result 1 -->
+                                                <div class="search-result-item">
+                                                    <div class="result-header">
+                                                        <span class="result-match-score">98% Relevance Match</span>
+                                                        <span class="result-date">June 6, 2026</span>
+                                                    </div>
+                                                    <h4 class="result-meeting-title">Q3 Product Strategy & Roadmap Sync</h4>
+                                                    <p class="result-snippet">"...We should also verify <strong>HIPAA compliance policies</strong> for these integrations... David will optimize the API endpoints..."</p>
+                                                    <div class="result-footer">
+                                                        <span>Speaker: David K.</span>
+                                                        <a href="#" class="result-link">Jump to transcript <i data-lucide="arrow-up-right"></i></a>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Mock search result 2 -->
+                                                <div class="search-result-item">
+                                                    <div class="result-header">
+                                                        <span class="result-match-score">85% Relevance Match</span>
+                                                        <span class="result-date">May 24, 2026</span>
+                                                    </div>
+                                                    <h4 class="result-meeting-title">Security & Compliance Audit Review</h4>
+                                                    <p class="result-snippet">"...Our database architecture handles data encryption at rest. For <strong>HIPAA compliance</strong>, we need to ensure all transcript logs are encrypted using AES-256 keys managed via AWS KMS..."</p>
+                                                    <div class="result-footer">
+                                                        <span>Speaker: Chief Information Security Officer</span>
+                                                        <a href="#" class="result-link">Jump to transcript <i data-lucide="arrow-up-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Ask AI Tab -->
+                                <div class="tab-panel" id="panel-ask-ai">
+                                    <div class="chat-container">
+                                        <div class="chat-messages" id="chat-messages">
+                                            <div class="message assistant">
+                                                <div class="msg-avatar"><i data-lucide="sparkles"></i></div>
+                                                <div class="msg-bubble">
+                                                    Hello! I'm your MeetMind Assistant. I have indexed all 142 meetings from your workspace. Ask me to draft follow-ups, summarize decisions, or locate action items.
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="message user">
+                                                <div class="msg-avatar">JD</div>
+                                                <div class="msg-bubble">
+                                                    Draft a follow-up email to the team based on today's strategy meeting.
+                                                </div>
+                                            </div>
+
+                                            <div class="message assistant">
+                                                <div class="msg-avatar"><i data-lucide="sparkles"></i></div>
+                                                <div class="msg-bubble">
+                                                    <p>Here is a draft based on the <strong>Q3 Product Strategy & Roadmap Sync</strong>:</p>
+                                                    <div class="email-draft-box">
+                                                        <p><strong>Subject:</strong> Action Items & Next Steps: Q3 Product Strategy</p>
+                                                        <p>Hi Team,</p>
+                                                        <p>Thanks for a productive sync today. Here are our high-priority action items as we aim to resolve the onboarding funnel drop-off:</p>
+                                                        <ul>
+                                                            <li><strong>@Alex</strong> - Launch OAuth integration sprint for Zoom/Slack (Due Thursday).</li>
+                                                            <li><strong>@David</strong> - Optimize API endpoints for sub-100ms response times (Due Friday).</li>
+                                                            <li><strong>@Sarah</strong> - Finalize UI mockups for the new onboarding wizard (Due Friday).</li>
+                                                        </ul>
+                                                        <p>We will reconvene on Friday at 10:00 AM for the design and technical review.</p>
+                                                        <p>Best regards,<br>John</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="chat-input-bar">
+                                            <input type="text" class="chat-input" id="chat-input-field" placeholder="Ask AI a question about your meetings...">
+                                            <button class="btn btn-primary btn-icon-only" id="send-chat-btn"><i data-lucide="send"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trusted By Section -->
+        <section class="trusted-by-section">
+            <div class="section-container">
+                <p class="trusted-title">TRUSTED BY INNOVATIVE TEAMS AT WORLD-CLASS ENTERPRISES</p>
+                <div class="logo-cloud">
+                    <div class="logo-item"><span class="logo-mock">▲</span> Vercel</div>
+                    <div class="logo-item"><span class="logo-mock">N</span> Notion</div>
+                    <div class="logo-item"><span class="logo-mock">L</span> Linear</div>
+                    <div class="logo-item"><span class="logo-mock">❖</span> Figma</div>
+                    <div class="logo-item"><span class="logo-mock">●</span> Stripe</div>
+                    <div class="logo-item"><span class="logo-mock">❄</span> Snowflake</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" id="features">
+            <div class="section-container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Supercharge Your Meeting Workflows</h2>
+                    <p class="section-subtitle">Everything you need to turn raw conversations into organized workspace knowledge, instantly.</p>
+                </div>
+
+                <div class="features-grid">
+                    <!-- Feature Card 1 -->
+                    <div class="feature-card reveal">
+                        <div class="feature-icon-wrapper">
+                            <i data-lucide="mic"></i>
+                        </div>
+                        <h3 class="feature-title">AI Meeting Transcription</h3>
+                        <p class="feature-desc">99.2% accuracy in speech-to-text transcription across 32+ languages. Automatically detects speakers, tech jargon, and accents with acoustic models.</p>
+                    </div>
+
+                    <!-- Feature Card 2 -->
+                    <div class="feature-card reveal">
+                        <div class="feature-icon-wrapper">
+                            <i data-lucide="file-text"></i>
+                        </div>
+                        <h3 class="feature-title">Smart Summaries</h3>
+                        <p class="feature-desc">Say goodbye to blocky notes. Generates hyper-structured summaries with executive decisions, project themes, and contextual descriptions tailored to your team.</p>
+                    </div>
+
+                    <!-- Feature Card 3 -->
+                    <div class="feature-card reveal">
+                        <div class="feature-icon-wrapper">
+                            <i data-lucide="check-square"></i>
+                        </div>
+                        <h3 class="feature-title">Automatic Action Items</h3>
+                        <p class="feature-desc">Using advanced LLM reasoning, MeetMind automatically extracts tasks, assignees, and deadlines, syncing them instantly to Jira, Linear, and Asana.</p>
+                    </div>
+
+                    <!-- Feature Card 4 -->
+                    <div class="feature-card reveal">
+                        <div class="feature-icon-wrapper">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <h3 class="feature-title">Semantic RAG Search</h3>
+                        <p class="feature-desc">Ask your meetings database questions directly. RAG semantic search connects abstract concepts, finding answers across years of meeting archives in milliseconds.</p>
+                    </div>
+
+                    <!-- Feature Card 5 -->
+                    <div class="feature-card reveal">
+                        <div class="feature-icon-wrapper">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <h3 class="feature-title">Team Collaboration</h3>
+                        <p class="feature-desc">Share summaries, tag teammates in transcripts, add notes, and collaborate in real-time. Integrate directly with Slack workspaces for instant channels sharing.</p>
+                    </div>
+
+                    <!-- Feature Card 6 -->
+                    <div class="feature-card reveal">
+                        <div class="feature-icon-wrapper">
+                            <i data-lucide="shield-check"></i>
+                        </div>
+                        <h3 class="feature-title">Enterprise Security</h3>
+                        <p class="feature-desc">SOC 2 Type II certified. AES-256 data encryption at rest and in transit, private VPC hosting, and custom data-retention schedules for complete HIPAA compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works-section" id="how-it-works">
+            <div class="section-container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Seamless Integration. Instant Intelligence.</h2>
+                    <p class="section-subtitle">How MeetMind AI turns daily meetings into a searchable, connected intelligence hub.</p>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step-card reveal">
+                        <div class="step-num">01</div>
+                        <h3 class="step-title">Connect Meetings</h3>
+                        <p class="step-desc">Sync with Google Calendar or Microsoft Outlook. The MeetMind bot automatically joins Zoom, Teams, and Google Meet calls when they start.</p>
+                    </div>
+                    <div class="step-arrow-icon"><i data-lucide="chevron-right"></i></div>
+                    
+                    <div class="step-card reveal">
+                        <div class="step-num">02</div>
+                        <h3 class="step-title">AI Processing</h3>
+                        <p class="step-desc">Our transcription pipeline cleans background noise, transcribes text, identifies speakers, and runs specialized LLM summaries in under 3 minutes.</p>
+                    </div>
+                    <div class="step-arrow-icon"><i data-lucide="chevron-right"></i></div>
+
+                    <div class="step-card reveal">
+                        <div class="step-num">03</div>
+                        <h3 class="step-title">Insights & Actions</h3>
+                        <p class="step-desc">Review highlights, assign tasks, edit details, and push structured items directly to your engineering, design, or project management boards.</p>
+                    </div>
+                    <div class="step-arrow-icon"><i data-lucide="chevron-right"></i></div>
+
+                    <div class="step-card reveal">
+                        <div class="step-num">04</div>
+                        <h3 class="step-title">Search Knowledge</h3>
+                        <p class="step-desc">All calls form a semantic index. Ask the AI assistant about past conversations to pull up quotes, dates, metrics, and project contexts instantly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Showcase / Detailed Dashboard Highlights -->
+        <section class="product-showcase-section" id="dashboard-showcase">
+            <div class="section-container">
+                <div class="showcase-grid">
+                    <div class="showcase-content reveal">
+                        <span class="showcase-tag">Semantic RAG Engine</span>
+                        <h2 class="showcase-title">A Semantic Knowledge Base of Your Entire Organization</h2>
+                        <p class="showcase-desc">
+                            MeetMind AI acts as a second brain for your company. It stores, reads, and connects every meeting transcription. Instead of searching keywords, ask questions like:
+                        </p>
+                        <div class="query-suggestions">
+                            <div class="query-suggestion-item">
+                                <i data-lucide="sparkles" class="text-blue"></i>
+                                <span>"Why did we decide to postpone the pricing page launch in April?"</span>
+                            </div>
+                            <div class="query-suggestion-item">
+                                <i data-lucide="sparkles" class="text-purple"></i>
+                                <span>"What design changes did Sarah suggest for the onboarding wizard?"</span>
+                            </div>
+                            <div class="query-suggestion-item">
+                                <i data-lucide="sparkles" class="text-blue"></i>
+                                <span>"List all compliance challenges Alex mentioned during the engineering audit."</span>
+                            </div>
+                        </div>
+                        <p class="showcase-footer-text">
+                            Our LLM searches your vector databases with multi-document cross-referencing, delivering a unified answer with citations linking directly back to timestamped transcripts and audio files.
+                        </p>
+                    </div>
+
+                    <div class="showcase-graphics-wrapper reveal">
+                        <div class="glass-graphics-card">
+                            <div class="graphic-header">
+                                <span class="graphic-dot"></span>
+                                <span class="graphic-title">Vector Search Visualization</span>
+                            </div>
+                            
+                            <!-- Custom Graph visual -->
+                            <div class="vector-graph">
+                                <div class="node node-main">
+                                    <i data-lucide="brain"></i>
+                                    <span class="node-tooltip">HIPAA Compliance</span>
+                                </div>
+                                <div class="node-connection conn-1"></div>
+                                <div class="node node-sub node-sub-1">
+                                    <i data-lucide="shield"></i>
+                                    <span class="node-tooltip">Security Audit</span>
+                                </div>
+                                <div class="node-connection conn-2"></div>
+                                <div class="node node-sub node-sub-2">
+                                    <i data-lucide="database"></i>
+                                    <span class="node-tooltip">Database Schema</span>
+                                </div>
+                                <div class="node-connection conn-3"></div>
+                                <div class="node node-sub node-sub-3">
+                                    <i data-lucide="key"></i>
+                                    <span class="node-tooltip">AWS KMS keys</span>
+                                </div>
+                            </div>
+
+                            <div class="graphics-stats">
+                                <div class="stat-box">
+                                    <p class="stat-val">300ms</p>
+                                    <p class="stat-lbl">Index Query Latency</p>
+                                </div>
+                                <div class="stat-divider"></div>
+                                <div class="stat-box">
+                                    <p class="stat-val">99.8%</p>
+                                    <p class="stat-lbl">Retrieval Precision</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="section-container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Designed for Output, Not Administration</h2>
+                    <p class="section-subtitle">Enable your organization to focus on building, designing, and coding, while MeetMind AI handles alignment.</p>
+                </div>
+
+                <div class="benefits-grid">
+                    <div class="benefit-card reveal">
+                        <div class="benefit-icon-wrapper">
+                            <i data-lucide="clock"></i>
+                        </div>
+                        <h3 class="benefit-title">Save Hours of Admin Time</h3>
+                        <p class="benefit-desc">No more manual summary drafting or logging tickets. MeetMind writes your meeting summaries and creates your workspace tasks automatically, returning 4+ hours per employee every week.</p>
+                    </div>
+
+                    <div class="benefit-card reveal">
+                        <div class="benefit-icon-wrapper">
+                            <i data-lucide="git-merge"></i>
+                        </div>
+                        <h3 class="benefit-title">Improve Team Alignment</h3>
+                        <p class="benefit-desc">Keep cross-functional departments (product, design, engineering, sales) aligned with automated summaries shared directly to Slack channels. Eliminate ambiguity about what was agreed upon.</p>
+                    </div>
+
+                    <div class="benefit-card reveal">
+                        <div class="benefit-icon-wrapper">
+                            <i data-lucide="milestone"></i>
+                        </div>
+                        <h3 class="benefit-title">Never Miss Key Decisions</h3>
+                        <p class="benefit-desc">With central knowledge storage, decisions are never lost. When team members change or projects are resurrected, easily query past discussions to understand historical context.</p>
+                    </div>
+
+                    <div class="benefit-card reveal">
+                        <div class="benefit-icon-wrapper">
+                            <i data-lucide="trending-up"></i>
+                        </div>
+                        <h3 class="benefit-title">Increase Meeting ROI</h3>
+                        <p class="benefit-desc">Ensure meetings are productive. By automatically extracting action items and tracking accountability, every call results in progress. Make meetings shorter, or skip them and read summaries.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="section-container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Loved by High-Growth Teams</h2>
+                    <p class="section-subtitle">Here is how engineering leaders, product designers, and founders run alignment with MeetMind AI.</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card reveal">
+                        <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                        <p class="testimonial-text">
+                            "MeetMind AI has fundamentally changed how we run engineering sprints. Instead of taking scribbled notes during standalone architecture reviews, we just talk. The RAG search across our past meeting history is like magic for onboarding new devs."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar av-1">AR</div>
+                            <div class="author-details">
+                                <h4 class="author-name">Alex Rivera</h4>
+                                <p class="author-title">VP of Engineering, Vercel</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card reveal">
+                        <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                        <p class="testimonial-text">
+                            "The design mockups, developer requirements, and sync points are automatically organized and sent directly to Linear. It feels like we hired an executive assistant for every single product manager on our team. A massive time-saver."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar av-2">SJ</div>
+                            <div class="author-details">
+                                <h4 class="author-name">Sarah Jenkins</h4>
+                                <p class="author-title">Lead Product Designer, Linear</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card reveal">
+                        <div class="stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+                        <p class="testimonial-text">
+                            "As a founder, I bounce between board reviews, investor pitches, and team syncs. With MeetMind AI, I can search 'investor concerns about HIPAA' and retrieve every specific question asked across 4 months of calls in 2 seconds."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar av-3">MK</div>
+                            <div class="author-details">
+                                <h4 class="author-name">Marcus K.</h4>
+                                <p class="author-title">Founder & CEO, Novatech</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing-section" id="pricing">
+            <div class="section-container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Simple, Predictable Pricing</h2>
+                    <p class="section-subtitle">Start free, upgrade when your team scales. No hidden fees or onboarding costs.</p>
+                    
+                    <!-- Billing Toggle -->
+                    <div class="billing-toggle-container">
+                        <span class="toggle-lbl active" id="billing-monthly">Monthly</span>
+                        <button class="toggle-switch" id="billing-toggle" aria-label="Toggle billing duration">
+                            <span class="toggle-switch-handle"></span>
+                        </button>
+                        <span class="toggle-lbl" id="billing-yearly">Yearly <span class="discount-pill">Save 20%</span></span>
+                    </div>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Starter Plan -->
+                    <div class="pricing-card reveal">
+                        <div class="card-header">
+                            <h3 class="plan-name">Starter</h3>
+                            <p class="plan-desc">For professionals and freelancers looking to automate notes.</p>
+                            <div class="price-box">
+                                <span class="currency">$</span>
+                                <span class="price-amount" id="price-starter" data-monthly="0" data-yearly="0">0</span>
+                                <span class="duration">/mo</span>
+                            </div>
+                            <a href="#signup" class="btn btn-secondary w-full">Get Started Free</a>
+                        </div>
+                        <div class="card-body">
+                            <ul class="features-list">
+                                <li><i data-lucide="check"></i> 5 meeting hours per month</li>
+                                <li><i data-lucide="check"></i> 95% transcription accuracy</li>
+                                <li><i data-lucide="check"></i> Basic AI summaries & action items</li>
+                                <li><i data-lucide="check"></i> Integrates with Zoom, Teams, Meet</li>
+                                <li class="muted"><i data-lucide="x"></i> Semantic RAG search across history</li>
+                                <li class="muted"><i data-lucide="x"></i> Custom security configurations</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Professional Plan (Featured) -->
+                    <div class="pricing-card featured reveal">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="card-header">
+                            <h3 class="plan-name">Professional</h3>
+                            <p class="plan-desc">For scaling teams that need deep search and collaboration.</p>
+                            <div class="price-box">
+                                <span class="currency">$</span>
+                                <span class="price-amount" id="price-professional" data-monthly="19" data-yearly="15">19</span>
+                                <span class="duration">/mo</span>
+                            </div>
+                            <a href="#signup" class="btn btn-primary w-full">Start 14-Day Free Trial</a>
+                        </div>
+                        <div class="card-body">
+                            <ul class="features-list">
+                                <li><i data-lucide="check"></i> Unlimited meeting hours</li>
+                                <li><i data-lucide="check"></i> 99.2% transcription accuracy</li>
+                                <li><i data-lucide="check"></i> Custom summary templates</li>
+                                <li><i data-lucide="check"></i> Semantic RAG search (past 1 year)</li>
+                                <li><i data-lucide="check"></i> Slack, Notion, Jira & Linear integrations</li>
+                                <li><i data-lucide="check"></i> Workspace collaboration & notes tagging</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Enterprise Plan -->
+                    <div class="pricing-card reveal">
+                        <div class="card-header">
+                            <h3 class="plan-name">Enterprise</h3>
+                            <p class="plan-desc">For large companies requiring top-tier security and API options.</p>
+                            <div class="price-box">
+                                <span class="price-custom">Custom</span>
+                            </div>
+                            <a href="#demo" class="btn btn-secondary w-full">Contact Sales</a>
+                        </div>
+                        <div class="card-body">
+                            <ul class="features-list">
+                                <li><i data-lucide="check"></i> Unlimited hours + Premium priority queues</li>
+                                <li><i data-lucide="check"></i> Dedicated LLM models & custom vocabulary</li>
+                                <li><i data-lucide="check"></i> Infinite Semantic search database</li>
+                                <li><i data-lucide="check"></i> SOC-2 Type II, HIPAA, & Custom VPC hosting</li>
+                                <li><i data-lucide="check"></i> SAML SSO & Advanced user provisioning</li>
+                                <li><i data-lucide="check"></i> Dedicated Success Manager & 24/7 SLA Support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="section-container">
+                <div class="section-header reveal">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Everything you need to know about MeetMind AI transcription, security, and usage.</p>
+                </div>
+
+                <div class="faq-accordion-list">
+                    <!-- Accordion 1 -->
+                    <div class="accordion-item reveal">
+                        <button class="accordion-header">
+                            <span>How does MeetMind AI join my meetings?</span>
+                            <span class="accordion-icon"><i data-lucide="chevron-down"></i></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Once you connect your Google Calendar or Microsoft Outlook calendar, MeetMind detects any upcoming Zoom, Microsoft Teams, or Google Meet links. A background bot will automatically request access to join the call at the scheduled time, record the meeting, and process it instantly. You can also customize which meetings the bot joins automatically.</p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion 2 -->
+                    <div class="accordion-item reveal">
+                        <button class="accordion-header">
+                            <span>How accurate is the transcription engine?</span>
+                            <span class="accordion-icon"><i data-lucide="chevron-down"></i></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Our speech-to-text engine boasts a 99.2% accuracy rate under ordinary conditions. It relies on noise-cancellation filtering, speaker identification, and customizable vocabulary dictionaries that adapt to your company's product names, acronyms, and technical jargon to ensure perfect naming and context.</p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion 3 -->
+                    <div class="accordion-item reveal">
+                        <button class="accordion-header">
+                            <span>What is Semantic Search (RAG) and how does it work?</span>
+                            <span class="accordion-icon"><i data-lucide="chevron-down"></i></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Semantic RAG (Retrieval-Augmented Generation) search does not just scan for exact keyword matches. Instead, it translates your conversations and natural-language queries into mathematical vector embeddings. This allows the AI to search for abstract concepts (e.g., searching for "onboarding bottlenecks" will surface conversations about "drop-offs during the integration phase"), pulling precise answers across months of meeting history.</p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion 4 -->
+                    <div class="accordion-item reveal">
+                        <button class="accordion-header">
+                            <span>Is my company's data safe with MeetMind AI?</span>
+                            <span class="accordion-icon"><i data-lucide="chevron-down"></i></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Absolutely. Security is our top priority. MeetMind AI is SOC 2 Type II certified. All data is fully encrypted using AES-256 at rest and TLS 1.3 in transit. We run isolation boundaries between enterprise workspaces, never use your proprietary data to train base models, and support HIPAA compliance criteria for healthcare organizations.</p>
+                        </div>
+                    </div>
+
+                    <!-- Accordion 5 -->
+                    <div class="accordion-item reveal">
+                        <button class="accordion-header">
+                            <span>Can I export transcripts and summaries to other platforms?</span>
+                            <span class="accordion-icon"><i data-lucide="chevron-down"></i></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Yes. You can export summaries and transcripts in PDF, Markdown, TXT, or JSON formats. MeetMind AI also supports automated sync integrations: it can instantly drop summaries into Slack channels, create cards on Linear or Jira boards, and document meeting files within Notion, Confluence, or Google Drive pages.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="final-cta-section">
+            <div class="section-container reveal">
+                <div class="cta-card">
+                    <div class="cta-content">
+                        <h2 class="cta-title">Make Every Meeting Count</h2>
+                        <p class="cta-desc">Join over 10,000+ teams building products, coordinating workflows, and scaling companies with MeetMind AI. Start today for free.</p>
+                        <div class="cta-buttons">
+                            <a href="#signup" class="btn btn-primary btn-lg">Get Started Free</a>
+                            <a href="#demo" class="btn btn-secondary-light btn-lg">Request Demo</a>
+                        </div>
+                        <p class="cta-fineprint">No credit card required. 14-day trial of Professional features included.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Branding and info -->
+                <div class="footer-brand">
+                    <a href="#" class="logo-group">
+                        <div class="logo-icon">
+                            <span class="logo-dot"></span>
+                        </div>
+                        <span class="logo-text">MeetMind <span class="accent-text">AI</span></span>
+                    </a>
+                    <p class="brand-pitch">Automating meeting intelligence for high-velocity teams using advanced LLMs and RAG vector storage systems.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i data-lucide="github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Product Links -->
+                <div class="footer-links-col">
+                    <h4 class="col-title">Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#dashboard-showcase">Interactive Demo</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#security">Security Core</a></li>
+                        <li><a href="#changelog">Changelog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Links -->
+                <div class="footer-links-col">
+                    <h4 class="col-title">Resources</h4>
+                    <ul>
+                        <li><a href="#docs">Documentation</a></li>
+                        <li><a href="#blog">Company Blog</a></li>
+                        <li><a href="#guides">RAG Best Practices</a></li>
+                        <li><a href="#support">Help Center</a></li>
+                        <li><a href="#status">System Status</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Links -->
+                <div class="footer-links-col">
+                    <h4 class="col-title">Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers <span class="hiring-badge">We're hiring</span></a></li>
+                        <li><a href="#press">Press Kit</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 MeetMind AI, Inc. All rights reserved.</p>
+                <div class="legal-bottom-links">
+                    <a href="#privacy">Privacy</a>
+                    <span class="bullet">•</span>
+                    <a href="#terms">Terms</a>
+                    <span class="bullet">•</span>
+                    <a href="#security">Security</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Files -->
+    <script src="app.js"></script>
+</body>
+</html>
